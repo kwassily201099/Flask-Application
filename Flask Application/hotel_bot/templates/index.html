@@ -1,0 +1,60 @@
+{% block content %}
+<form id="hotelbot-form">
+<div id="container">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+	<header>
+		<span>The RiveScript Hotel Bot</span>
+
+		<nav>
+			<ul>
+				<li><button type="button" id="run">Run</button></li>
+				</li>
+			</ul>
+		</nav>
+	</header>
+
+	<div class="editor">
+		<div class="code">
+			<textarea id="code">{% if source %}{{ source }}{% else %}
+
++ hello
+- Hello{% endif %}</textarea>
+		</div>
+		<div class="result">
+			<div id="dialogue">
+				<div class="history-pane">
+					<ul id="history">
+					</ul>
+				</div>
+			</div>
+			<div class="controls">
+				<input type="text" size="40" id="message" placeholder="Your message" disabled="disabled" autocomplete="off">
+				<button type="submit">Send</button>
+			</div>
+		</div>
+	</div>
+
+
+</div>
+</form>
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.1.0.min.js"
+	integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="
+	crossorigin="anonymous"></script>
+<script src="https://unpkg.com/rivescript@latest/dist/rivescript.min.js"></script>
+<script type="text/javascript" src="https://unpkg.com/rivescript-contrib-coffeescript@latest/dist/rivescript-contrib-coffeescript.min.js"></script>
+<script src="{{ url_for('static', filename='js/hotelbot.js') }}"></script>
+
+
+{% if sharing %}
+<script>
+	$(document).ready(function() {
+		$("#sharing").css("display", "inline");
+	});
+</script>
+{% endif %}
+
+{% endblock %}

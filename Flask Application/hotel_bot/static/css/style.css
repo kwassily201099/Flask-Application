@@ -1,0 +1,225 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body {
+	font-family: Ubuntu,"Trebuchet MS",Arial,Helvetica,sans-serif;
+	font-size: medium;
+	color: #000000;
+	background-color: #FFFFFF;
+}
+
+a:link, a:visited {
+	color: #006699;
+	text-decoration: underline;
+}
+
+a:hover, a:active {
+	color: #FF9900;
+}
+
+form {
+	display: inline;
+	margin: 0;
+	padding: 0;
+}
+
+button {
+	font-size: medium;
+	color: #FFFFFF;
+	background-color: #006699;
+	border: 1px solid #006699;
+	border-radius: 4px;
+	padding: 4px;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+}
+
+button:hover {
+	background-color: #0099FF;
+}
+
+input[type="text"], textarea {
+	border: 1px solid #006699;
+	border-radius: 4px;
+	padding: 8px;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	color: #000000;
+	background-color: #FFFFDD;
+}
+
+input[type="text"]:focus, textarea:focus {
+	border: 1px solid #0099FF;
+	box-shadow: 0px 0px 2px #0099FF;
+}
+
+input:disabled, textarea:disabled {
+	cursor: not-allowed;
+	background-color: #DDDDDD;
+	color: #666666;
+}
+
+pre, code {
+	font-family: "Ubuntu Mono","DejaVu Sans Mono","Lucida Console","Monospace","Courier New",Courier,monospace;
+}
+
+pre {
+	border: 1px dashed #009900;
+	padding: 6px;
+}
+
+.pull-right {
+	float: right;
+}
+
+
+.page {
+	display: inline-block;
+	margin: 0 20px;
+	width: 850px;
+}
+
+
+#sharing {
+	font-weight: normal;
+	display: none;
+}
+
+
+#container {
+	min-height: 100%;
+	height: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+
+
+header {
+	padding: 12px;
+	font-size: medium;
+	font-weight: bold;
+	background-color: #F4A460;
+	height: 30px;
+
+
+	flex: 0 0 auto;
+}
+
+header span {
+	float: left;
+	margin-right: 12px;
+	line-height: 30px;
+}
+
+header ul {
+	display: inline;
+	list-style: square;
+	margin: 0;
+	padding: 0;
+}
+
+header ul li {
+	display: inline;
+	padding: 0 4px;
+	color: red;
+}
+
+footer {
+	flex: 0 0 auto;
+	background-color: #F4A460;
+	padding: 8px;
+}
+div.editor {
+	/* Stretchy flexbox size */
+	flex: 1 1 auto;
+	color: #0099FF;
+	display: flex;
+}
+
+div.code {
+	display: flex;
+	flex: 1 1 50%;
+	flex-direction: column;
+	color: #009900;
+}
+
+	div.code textarea {
+		flex: 1 1 auto;
+		font-family: "Ubuntu Mono","DejaVu Sans Mono","Lucida Console","Monospace","Courier New",Courier,monospace;
+		font-size: medium;
+		margin: 10px;
+		resize: none;
+	}
+
+div.result {
+	flex: 1 1 50%;
+	display: flex;
+	flex-direction: column;
+}
+
+	div.result div#dialogue {
+		flex: 1 1 auto;
+		overflow: auto;
+		height: 0;
+	}
+
+		div.result div.history-pane {
+			position: relative;
+			margin: 8px;
+		}
+
+		div.history-pane ul {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+		}
+
+		div.history-pane ul li {
+			background-color: #00CCFF;
+			display: block;
+			padding: 8px;
+			margin: 8px 0;
+			border-radius: 8px;
+		}
+
+		div.history-pane ul li.bot {
+			background-color: #66CDAA;
+		}
+
+		div.history-pane ul li.bot::before {
+			content: "Operator says: ";
+			font-weight: bold;
+			color: #228B22;
+		}
+
+		div.history-pane ul li.user {
+			background-color: #F0FFF0;
+		}
+
+		div.history-pane ul li.user::before {
+			content: "You: ";
+			font-weight: bold;
+			color: #00CED1;
+		}
+
+	div.result div.controls {
+		flex: 0 1 auto;
+		color: #00CCFF;
+		display: flex;
+	}
+
+		div.result div.controls input {
+			flex: 1 1 auto;
+			margin: 4px 0;
+		}
+
+
+
+
+
+
+
